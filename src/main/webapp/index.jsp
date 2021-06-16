@@ -290,15 +290,15 @@
     <!--contact us-->
     
     
-    <section class='mt-5 mb-5'>
+    <section class='mt-5 mb-5 '>
         
-        <div class='container text-center'>
+        <div class='container text-center '>
             <h1>Get in touch with us</h1>
             <p>Our costomer service is the best and available for you 24X7 with polite behaviour.</p>
              <i class="fa fa-phone fa-3x text-warning"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fa fa-heart fa-3x text-danger"></i>
             <h5>+91 85478954XX</h5>
-            <h5>www.kotax.com</h5>
+            <h5>awnishkumar@gmail.com</h5>
         </div>
         
         

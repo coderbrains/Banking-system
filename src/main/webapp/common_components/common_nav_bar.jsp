@@ -16,7 +16,7 @@
                 </li>
                 
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fa fa-user-plus mr-2"></i>Sign up</a>
+                    <a class="nav-link" href="SignUp.jsp"><i class="fa fa-user-plus mr-2"></i>Sign up</a>
                 </li>
             </ul>
         </div>
