@@ -42,6 +42,9 @@ public class AccountCreate extends HttpServlet {
                 String password = request.getParameter("password");
                 Part part = request.getPart("image");
                 String pic = part.getSubmittedFileName();
+                if(pic.equals("")){
+                    pic = "default.jpg";
+                }
                 String pin = request.getParameter("pin");
 
                 Customer customer = new Customer();
