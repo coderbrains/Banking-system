@@ -4,6 +4,9 @@
     Author     : Awanish kumar singh
 --%>
 
+<%@page import="org.hibernate.Transaction"%>
+<%@page import="com.bankingsystem.helper.FactoryProvider"%>
+<%@page import="org.hibernate.Session"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +16,12 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        
+            
+            <%  out.println(FactoryProvider.getFactory()); %>
+        <%  out.println(FactoryProvider.getFactory()); %>
+        <%  out.println(FactoryProvider.getFactory()); %>
+        <%  out.println(FactoryProvider.getFactory()); %>
+        
     </body>
 </html>
