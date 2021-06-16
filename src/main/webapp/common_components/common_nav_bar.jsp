@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-background">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp"><i class="fa fa-building mr-2"></i>Kotax</a>
+        <a class="navbar-brand" href="index.jsp"><i class="fa fa-bank mr-2"></i>Kotax</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
