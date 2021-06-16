@@ -19,6 +19,8 @@
         <%@include  file="common_components/common_nav_bar.jsp" %>
 
         <header class="header">
+            
+            
 
             <div class="container h-100">
 
@@ -116,7 +118,7 @@
 
                                 We charge the minimum cost for each and every transaction. Yearly fees for the services is also too low.
                             </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">Get it</a>
                         </div>
                     </div>
 
@@ -284,6 +286,30 @@
 
     <!--//slider section ends here-->
 
+    
+    <!--contact us-->
+    
+    
+    <section class='mt-5 mb-5'>
+        
+        <div class='container text-center'>
+            <h1>Get in touch with us</h1>
+            <p>Our costomer service is the best and available for you 24X7 with polite behaviour.</p>
+             <i class="fa fa-phone fa-3x text-warning"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-heart fa-3x text-danger"></i>
+            <h5>+91 85478954XX</h5>
+            <h5>www.kotax.com</h5>
+        </div>
+        
+        
+    </section>
+    
+    <!--contact us ends here-->
 
+    <%
+        out.println(FactoryProvider.getFactory());
+        
+        %>
+    
 </body>
 </html>
