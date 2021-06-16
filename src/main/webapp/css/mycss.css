@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 16, 2021, 9:12:02 AM
+    Author     : Awanish kumar singh
+*/
+
+.primary-background{
+   background: linear-gradient(to right, #fc00ff, #00dbde);
+}
+
+  
+.header{
+
+    height: 90vh;
+    width: 100%;
+    color: white;
+    background-image: linear-gradient(to right,  rgba(0,0,0,0.9), rgba(0,0,0,0.2)), 
+    url(https://images.pexels.com/photos/1181290/pexels-photo-1181290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+
+}
