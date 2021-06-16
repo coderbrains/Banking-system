@@ -4,9 +4,17 @@
         <servlet-name>Createaccount</servlet-name>
         <servlet-class>com.bankingsystem.servlets.Createaccount</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccountCreate</servlet-name>
+        <servlet-class>com.bankingsystem.servlets.AccountCreate</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Createaccount</servlet-name>
         <url-pattern>/Createaccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountCreate</servlet-name>
+        <url-pattern>/AccountCreate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

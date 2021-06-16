@@ -40,6 +40,12 @@ public class Customer {
     @Column(length = 20)
     private String userType;
 
+    public Customer() {
+    }
+    
+    
+    
+
     public Customer(int userId, String name, int age, String pan_number, String aadhar_number, String mobile, String city_name, String state_name, String pincode, String email, String password, String pic_name, String userType) {
         this.userId = userId;
         this.name = name;

@@ -15,7 +15,7 @@
     <body style="background: #E8EAF6;">
         <%@include file="common_components/common_nav_bar.jsp" %>
 
-        <form action="Createaccount" method="post">
+        <form action="AccountCreate" method="post" enctype="multipart/form-data">
             <div class=' card mt-2 container'>
 
                 <div class='text-center'>
