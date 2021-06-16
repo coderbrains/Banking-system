@@ -14,6 +14,7 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 /**
@@ -23,15 +24,6 @@ import javax.servlet.http.Part;
 @MultipartConfig
 public class AccountCreate extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -66,9 +58,20 @@ public class AccountCreate extends HttpServlet {
                 customer.setPincode(pin);
                 customer.setUserType("normal");
                 customer.setState_name(state);
-                
+
                 boolean saveCustomer = CustomerDao.saveCustomer(customer);
-                out.println(saveCustomer);
+                HttpSession https = request.getSession();
+                if (saveCustomer) {
+
+                    https.setAttribute("message", "Your account has been opened successfully.Redirect to the Login page to enable account");
+                    response.sendRedirect("SignUp.jsp");
+
+                } else {
+                    https.setAttribute("message", "Sorry ! Some problem occured while opening account. Check all fields carefully.");
+                    response.sendRedirect("SignUp.jsp");
+
+                }
+
 //                out.println(name);
 //                out.println(email);
 //                out.println(pan);
@@ -82,6 +85,9 @@ public class AccountCreate extends HttpServlet {
 //                out.println(age);
             } catch (Exception e) {
                 e.printStackTrace();
+                HttpSession https = request.getSession();
+                https.setAttribute("message", "Sorry ! Some error occured while opening account. Plz check all fields.");
+                response.sendRedirect("SignUp.jsp");
             }
         }
     }
