@@ -306,10 +306,5 @@
     
     <!--contact us ends here-->
 
-    <%
-        out.println(FactoryProvider.getFactory());
-        
-        %>
-    
 </body>
 </html>

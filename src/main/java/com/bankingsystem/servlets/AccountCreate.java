@@ -7,6 +7,8 @@ package com.bankingsystem.servlets;
 
 import com.bankingsystem.dao.CustomerDao;
 import com.bankingsystem.entities.Customer;
+import com.bankingsystem.helper.SaveFile;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -42,7 +44,7 @@ public class AccountCreate extends HttpServlet {
                 String password = request.getParameter("password");
                 Part part = request.getPart("image");
                 String pic = part.getSubmittedFileName();
-                if(pic.equals("")){
+                if (pic.equals("")) {
                     pic = "default.jpg";
                 }
                 String pin = request.getParameter("pin");
@@ -65,14 +67,14 @@ public class AccountCreate extends HttpServlet {
                 boolean saveCustomer = CustomerDao.saveCustomer(customer);
                 HttpSession https = request.getSession();
                 if (saveCustomer) {
-
+                    String path = request.getRealPath("/") + "Customer_pics" + File.separator + part.getSubmittedFileName();
+                    SaveFile.saveImage(part.getInputStream(), path);
                     https.setAttribute("message", "Your account has been opened successfully.Redirect to the Login page to enable account");
                     response.sendRedirect("SignUp.jsp");
 
                 } else {
                     https.setAttribute("message", "Sorry ! Some problem occured while opening account. Check all fields carefully.");
                     response.sendRedirect("SignUp.jsp");
-
                 }
 
 //                out.println(name);
