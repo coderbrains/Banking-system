@@ -18,6 +18,7 @@
         <property name="format_sql">true</property>
         
         <mapping class="com.bankingsystem.entities.Customer"/>
+        <mapping class="com.bankingsystem.entities.Transaction"/>
           
         
         

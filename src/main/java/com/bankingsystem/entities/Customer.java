@@ -1,10 +1,13 @@
 package com.bankingsystem.entities;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -39,14 +42,15 @@ public class Customer {
     private String pic_name;
     @Column(length = 20)
     private String userType;
+    private int amount;
+    @OneToOne
+    private Transaction transaction;
 
     public Customer() {
+        
     }
-    
-    
-    
 
-    public Customer(int userId, String name, int age, String pan_number, String aadhar_number, String mobile, String city_name, String state_name, String pincode, String email, String password, String pic_name, String userType) {
+    public Customer(int userId, String name, int age, String pan_number, String aadhar_number, String mobile, String city_name, String state_name, String pincode, String email, String password, String pic_name, String userType, int amount, Transaction transaction) {
         this.userId = userId;
         this.name = name;
         this.age = age;
@@ -60,9 +64,11 @@ public class Customer {
         this.password = password;
         this.pic_name = pic_name;
         this.userType = userType;
+        this.amount = amount;
+        this.transaction = transaction;
     }
 
-    public Customer(String name, int age, String pan_number, String aadhar_number, String mobile, String city_name, String state_name, String pincode, String email, String password, String pic_name) {
+    public Customer(String name, int age, String pan_number, String aadhar_number, String mobile, String city_name, String state_name, String pincode, String email, String password, String pic_name, String userType, int amount, Transaction transaction) {
         this.name = name;
         this.age = age;
         this.pan_number = pan_number;
@@ -74,6 +80,9 @@ public class Customer {
         this.email = email;
         this.password = password;
         this.pic_name = pic_name;
+        this.userType = userType;
+        this.amount = amount;
+        this.transaction = transaction;
     }
 
     public int getUserId() {
@@ -179,4 +188,23 @@ public class Customer {
     public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
+    }
+
+    
+    
 }

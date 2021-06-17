@@ -58,6 +58,7 @@ public class AccountCreate extends HttpServlet {
                 customer.setPincode(pin);
                 customer.setUserType("normal");
                 customer.setState_name(state);
+                customer.setAmount(0);
 
                 boolean saveCustomer = CustomerDao.saveCustomer(customer);
                 HttpSession https = request.getSession();
