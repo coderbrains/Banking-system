@@ -12,7 +12,7 @@
                     <a class="nav-link" href="index.jsp"><i class='fa fa-home mr-2'></i>Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fa fa-user-circle-o fa-spin mr-2"></i>Login</a>
+                    <a class="nav-link" href="Login.jsp"><i class="fa fa-user-circle-o fa-spin mr-2"></i>Login</a>
                 </li>
                 
                 <li class="nav-item active">
