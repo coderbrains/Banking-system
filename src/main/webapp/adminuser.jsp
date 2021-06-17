@@ -11,6 +11,12 @@
     {
         session.setAttribute("message", "You are not logged in ! Login first.");
         response.sendRedirect("Login.jsp");
+        return;
+    }else if(customer.getUserType().equals("normal")){
+        session.setAttribute("message", "You are not admin.");
+        session.removeAttribute("currentuser");
+        response.sendRedirect("Login.jsp");
+        return;
     }
     
     %>
@@ -25,6 +31,7 @@
     </head>
     <body>
         <%@include file="common_components/common_nav_bar.jsp" %>
+        <%@include file="message.jsp" %>
         <h1>Admin User</h1>
     </body>
 </html>

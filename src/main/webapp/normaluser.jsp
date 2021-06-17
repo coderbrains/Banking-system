@@ -11,6 +11,12 @@
     {
         session.setAttribute("message", "You are not logged in ! Login first.");
         response.sendRedirect("Login.jsp");
+        return;
+    }else if(customer.getUserType().equals("admin")){
+        session.setAttribute("message", "You are not Customer ! Login first");
+        session.removeAttribute("currentuser");
+        response.sendRedirect("Login.jsp");
+        return;
     }
     
     %>
@@ -22,9 +28,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hello, <%=   customer.getName()  %> | Customer page | Kotax</title>
+        <%@include file="common_components/commonjs_css.jsp" %>
     </head>
     <body>
-        
+        <%@include file="common_components/common_nav_bar.jsp" %>
+        <h1>Normal user</h1>
         
         
     </body>

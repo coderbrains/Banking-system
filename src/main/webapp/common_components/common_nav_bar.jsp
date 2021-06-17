@@ -9,17 +9,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.jsp"><i class='fa fa-home mr-2'></i>Home <span class="sr-only">(current)</span></a>
-                </li>
+
 
                 <%
                     Customer custom = (Customer) session.getAttribute("currentuser");
-
                     if (custom == null) {
 
                 %>
 
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.jsp"><i class='fa fa-home mr-2'></i>Home <span class="sr-only">(current)</span></a>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="Login.jsp"><i class="fa fa-user-circle-o fa-spin mr-2"></i>Login</a>
                 </li>
@@ -32,9 +33,28 @@
 
                 %>
 
+                <%                    if (custom.getUserType().equals("normal")) {
+
+                %>
+                <li class="nav-item active">
+                    <a class="nav-link" href="normaluser.jsp"><i class='fa fa-home mr-2'></i>Home <span class="sr-only">(current)</span></a>
+                </li>   
+
+                <%                    }else{
+
+
+                %>
+                <li class="nav-item active">
+                    <a class="nav-link" href="adminuser.jsp"><i class='fa fa-home mr-2'></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                
+                <% 
+                    }
+                %>
+                
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="SignUp.jsp"><i class="fa fa-user-circle-o mr-2"></i><%=  custom.getName()%></a>
+                    <a class="nav-link" href="#!"><img style="max-height: 25px;max-width: 25px; border-radius: 50%;" class="mr-2 img-fluid" src="Customer_pics/<%= custom.getPic_name()%>"/><%=  custom.getName()%></a>
                 </li>
 
 
