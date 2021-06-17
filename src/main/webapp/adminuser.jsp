@@ -20,9 +20,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Hello, <%=  customer.getName() %> | Admin page | Kotax</title>
+        <%@include file="common_components/commonjs_css.jsp" %>
     </head>
     <body>
+        <%@include file="common_components/common_nav_bar.jsp" %>
         <h1>Admin User</h1>
     </body>
 </html>
