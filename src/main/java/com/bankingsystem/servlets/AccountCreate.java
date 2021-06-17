@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.bankingsystem.servlets;
 
 import com.bankingsystem.dao.CustomerDao;
@@ -76,18 +71,6 @@ public class AccountCreate extends HttpServlet {
                     https.setAttribute("message", "Sorry ! Some problem occured while opening account. Check all fields carefully.");
                     response.sendRedirect("SignUp.jsp");
                 }
-
-//                out.println(name);
-//                out.println(email);
-//                out.println(pan);
-//                out.println(mobile);
-//                out.println(aadhar);
-//                out.println(pic);
-//                out.println(pin);
-//                out.println(state);
-//                out.println(city);
-//                out.println(password);
-//                out.println(age);
             } catch (Exception e) {
                 e.printStackTrace();
                 HttpSession https = request.getSession();
