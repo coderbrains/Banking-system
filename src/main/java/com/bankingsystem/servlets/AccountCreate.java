@@ -69,14 +69,15 @@ public class AccountCreate extends HttpServlet {
                     response.sendRedirect("SignUp.jsp");
 
                 } else {
-                    https.setAttribute("message", "Sorry ! Some problem occured while opening account. Check all fields carefully.");
+                    https.setAttribute("message", "Sorry ! Duplicate entry for the Adhar,mobile,email and Pancard is not allowed.");
                     response.sendRedirect("SignUp.jsp");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
                 HttpSession https = request.getSession();
-                https.setAttribute("message", "Sorry ! Some error occured while opening account. Plz check all fields.");
+                https.setAttribute("message", "Sorry ! Some error occured while opening account.Duplicate entries of the adhar,pan,mobile,email are not allowed.");
                 response.sendRedirect("SignUp.jsp");
+                
             }
         }
     }

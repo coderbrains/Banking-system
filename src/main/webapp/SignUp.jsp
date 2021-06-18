@@ -33,32 +33,32 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>
-                                    <input type="text" name='name' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                                    <input required type="text" name='name' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Age</label>
-                                    <input type="number" name='age' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your age">
+                                    <input required type="number" name='age' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your age">
                                 </div>                 
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Pan Number</label>
-                                    <input type="text" name='pan' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pan">
+                                    <input required type="text" name='pan' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pan">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Aadhar Number</label>
-                                    <input type="text" name='adhar' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter adhar number">
+                                    <input required type="text" name='adhar' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter adhar number">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">City</label>
-                                    <input type="text" name='city' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter City name">
+                                    <input required type="text" name='city' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter City name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Mobile Number</label>
-                                    <input type="number" name='mobile' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile number">
+                                    <input required type="number" name='mobile' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile number">
                                 </div>
 
                             </div>
@@ -71,27 +71,27 @@
                                 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email</label>
-                                    <input type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email number">
+                                    <input required type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email number">
                                 </div>
                                 
                                  <div class="form-group">
                                     <label for="exampleInputEmail1">Password</label>
-                                    <input type="password" name='password' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Strong passwords">
+                                    <input required type="password" name='password' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Strong passwords">
                                 </div>
                                 
                                  <div class="form-group">
                                     <label for="exampleInputEmail1">Zip code</label>
-                                    <input type="number" name='pin' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter six digit postal code">
+                                    <input required type="number" name='pin' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter six digit postal code">
                                 </div>
                                 
                                  <div class="form-group">
                                     <label for="exampleInputEmail1">State Name</label>
-                                    <input type="text" name='state' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your state">
+                                    <input type="text" required name='state' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your state">
                                 </div>
                                 
                                  <div class="form-group">
                                     <label for="exampleInputEmail1">select your picture</label>
-                                    <input type="file" name='image' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile number">
+                                    <input type="file" name='image' required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile number">
                                 </div>
                                 
                                  <div class="form-group">

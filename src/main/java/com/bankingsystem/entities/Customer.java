@@ -24,11 +24,11 @@ public class Customer {
     @Column(length=50)
     private String name;
     private int age;
-    @Column(length = 20)
+    @Column(length = 20,unique = true)
     private String pan_number;
-    @Column(length = 20)
+    @Column(length = 20,unique = true)
     private String aadhar_number;
-    @Column(length = 15)
+    @Column(length = 15,unique = true)
     private String mobile;
     @Column(length = 20)
     private String city_name;
@@ -36,7 +36,7 @@ public class Customer {
     private String state_name;
     @Column(length = 10)
     private String pincode;
-    @Column(length = 50)
+    @Column(length = 50,unique = true)
     private String email;
     @Column(length = 50)
     private String password;

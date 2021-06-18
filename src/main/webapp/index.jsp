@@ -305,6 +305,11 @@
     </section>
     
     <!--contact us ends here-->
+    
+    <%
+        
+    FactoryProvider.getFactory();
+        %>
 
 </body>
 </html>

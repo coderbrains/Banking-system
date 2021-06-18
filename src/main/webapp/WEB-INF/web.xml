@@ -16,6 +16,10 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.bankingsystem.servlets.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BlockServlet</servlet-name>
+        <servlet-class>com.bankingsystem.servlets.BlockServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Createaccount</servlet-name>
         <url-pattern>/Createaccount</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlockServlet</servlet-name>
+        <url-pattern>/BlockServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
