@@ -104,5 +104,21 @@ public class CustomerDao {
         session.close();
         return customer;
     }
+    
+    public static void deposit(int customerid, int amount){
+        
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+        
+        Customer c = getCustomerbyID(customerid);
+        
+        int camount = c.getAmount();
+        camount += amount; 
+        c.setAmount(camount);
+        
+        t.commit();
+        session.close();
+        
+    }
 
 }

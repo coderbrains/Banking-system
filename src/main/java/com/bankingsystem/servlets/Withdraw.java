@@ -37,12 +37,12 @@ public class Withdraw extends HttpServlet {
             int customerid = Integer.parseInt(request.getParameter("customerid"));
             int amount = Integer.parseInt(request.getParameter("amount"));
             
-            CustomerDao.deposit();
+            
             
             if(id == 1){
-                
+                CustomerDao.deposit(customerid);
             }else{
-                CustomerDao.withdraw();
+                CustomerDao.withdraw(customerid);
             }
             
             

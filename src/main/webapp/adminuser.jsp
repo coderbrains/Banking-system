@@ -246,7 +246,7 @@
 
                             </div>
                             <div class="container text-center">
-                                <button type="submit" class="btn btn-primary">Deposit</button>
+                                <button type="submit" class="btn btn-primary">Withdraw</button>
                             </div>
 
                         </form>
