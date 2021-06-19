@@ -2,6 +2,7 @@ package com.bankingsystem.dao;
 
 import com.bankingsystem.entities.Customer;
 import com.bankingsystem.helper.FactoryProvider;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -71,6 +72,21 @@ public class CustomerDao {
         t.commit();
         session.close();
         return executeUpdate;
+    }
+    
+    
+    public static List<Customer> getAllCustomers(){
+        List list = null;
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+        
+        Query q = session.createQuery("from Customer");
+        list = q.list();
+        
+        t.commit();
+        session.close();
+        
+        return list;
     }
 
 }

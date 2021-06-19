@@ -19,27 +19,25 @@ public class BlockServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           
-            try{
-                
-            }catch(Exception e){
+            HttpSession session = request.getSession();
+            try {
+                String id = request.getParameter("userid");
+                int status = CustomerDao.deleteUser(Integer.parseInt(id));
+
+                if (status > 0) {
+
+                    session.setAttribute("message", "Successfully deleted ! This account is deleted successfully and cannot be retrieved.");
+                    response.sendRedirect("adminuser.jsp");
+                } else {
+                    session.setAttribute("message", "This account is not found in the database. Wrong Id.");
+                    response.sendRedirect("adminuser.jsp");
+                }
+            } catch (Exception e) {
                 session.setAttribute("message", "Sorry ! Some error occured. TRY AGAIN AFTER SOMETIME.");
                 response.sendRedirect("adminuser.jsp");
                 e.printStackTrace();
             }
-            
-            String id = request.getParameter("userid");
-            int status =   CustomerDao.deleteUser(Integer.parseInt(id));
-            HttpSession session = request.getSession();
-            if(status > 0){
-                
-                session.setAttribute("message", "Successfully deleted ! This account is deleted successfully and cannot be retrieved.");
-                response.sendRedirect("adminuser.jsp");
-            }else{
-                session.setAttribute("message", "This account is not found in the database. Wrong Id.");
-                response.sendRedirect("adminuser.jsp");
-            }
-            
+
         }
     }
 

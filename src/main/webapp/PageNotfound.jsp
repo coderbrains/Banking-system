@@ -13,10 +13,15 @@
         <%@include file="common_components/commonjs_css.jsp" %>
     </head>
     <body>
-        <div class="container text-center">
+        <%@include file="message.jsp" %>
+        <div class="container-fluid text-center mt-5">
             <h1>Page Not Found</h1>   
-            <img src="img/404error.jpg"  style="margin-left: auto;margin-right: auto;   max-height: 500px; max-width: 500px; border-radius: 50%;"/>
-           
+            <img src="img/404error.jpg"  style=" max-height: 300px; max-width: 300px; border-radius: 50%;"/>
+            
+        </div>
+        
+        <div class="container-fluid text-center">
+            <a href="index.jsp" class="btn btn-primary">Go to Home</a>
         </div>
     </body>
 </html>
