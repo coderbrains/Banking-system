@@ -44,10 +44,11 @@
                         <th scope="col">Type</th>
                         <th scope="col">Name</th>
                         <th scope="col">Adhar</th>
+                        <th scope="col">city</th>
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
+                        <th scope="col">Amount</th>
                         <th scope="col">Pan</th>
-                        <th scope="col">City</th>
                         <th scope="col">State</th>
                         <th scope="col">Pin</th>
                         <th scope="col">Avtar</th>
@@ -69,6 +70,7 @@
                         <td><%= c.getCity_name()%></td>
                         <td><%= c.getEmail()%></td>
                         <td><%= c.getPassword()%></td>
+                        <td><%=  c.getAmount()  %></td>
                         <td><%= c.getPan_number()%></td>
                         <td><%= c.getState_name()%></td>
                         <td><%= c.getPincode()%></td>

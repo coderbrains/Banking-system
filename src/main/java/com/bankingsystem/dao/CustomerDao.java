@@ -26,7 +26,7 @@ public class CustomerDao {
             session.close();
 
         } catch (Exception e) {
-            
+
             tx.commit();
             session.close();
             e.printStackTrace();
@@ -51,74 +51,97 @@ public class CustomerDao {
         session.close();
         return customer;
     }
-    
-    public static int deleteUser(int userid){
+
+    public static int deleteUser(int userid) {
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
         int executeUpdate = 0;
 
-        try{
-            
+        try {
+
             Query q = session.createQuery("delete from Customer where id =: i");
             q.setParameter("i", userid);
             executeUpdate = q.executeUpdate();
-            
-        }catch(Exception e){
+
+        } catch (Exception e) {
             t.commit();
             session.close();
             e.printStackTrace();
         }
-        
+
         t.commit();
         session.close();
         return executeUpdate;
     }
-    
-    
-    public static List<Customer> getAllCustomers(){
+
+    public static List<Customer> getAllCustomers() {
         List list = null;
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
-        
+
         Query q = session.createQuery("from Customer");
         list = q.list();
-        
+
         t.commit();
         session.close();
-        
+
         return list;
     }
-    
-    public static Customer getCustomerbyID(int id){
+
+    public static Customer getCustomerbyID(int id) {
         Customer customer = null;
-        
+
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
-        
+
         Query q = session.createQuery("from Customer where id =: i");
         q.setParameter("i", id);
-        customer = (Customer)q.uniqueResult();
-        
-        
+        customer = (Customer) q.uniqueResult();
+
         t.commit();
         session.close();
         return customer;
     }
-    
-    public static void deposit(int customerid, int amount){
-        
+
+    public static void deposit(int customerid, int amount) {
+
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
-        
+
         Customer c = getCustomerbyID(customerid);
-        
+
         int camount = c.getAmount();
-        camount += amount; 
+        camount += amount;
         c.setAmount(camount);
-        
+        session.update(c);
         t.commit();
-        session.close();
-        
+        session.close();//73 7000 7000
+
+    }
+
+    public static boolean withdraw(int customerid, int amount) {
+
+        boolean result = false;
+
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Customer c = getCustomerbyID(customerid);
+
+        int camount = c.getAmount();
+
+        if (camount < amount) {
+            result = false;
+        } else {
+            camount -= amount;
+            c.setAmount(camount);
+            session.update(c);
+            result =  true;
+        }
+
+        t.commit();
+        session.close();//73 7000 7000
+        return result;
     }
 
 }

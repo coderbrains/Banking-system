@@ -6,12 +6,14 @@
 package com.bankingsystem.servlets;
 
 import com.bankingsystem.dao.CustomerDao;
+import com.bankingsystem.entities.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,21 +34,46 @@ public class Withdraw extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           
+
             int id = Integer.parseInt(request.getParameter("id"));
             int customerid = Integer.parseInt(request.getParameter("customerid"));
             int amount = Integer.parseInt(request.getParameter("amount"));
-            
-            
-            
-            if(id == 1){
-                CustomerDao.deposit(customerid);
-            }else{
-                CustomerDao.withdraw(customerid);
+
+            HttpSession session = request.getSession();
+
+            Customer customer = CustomerDao.getCustomerbyID(customerid);
+
+            if (customer == null) {
+                    
+                session.setAttribute("message", "Customer is not present in the bank.");
+                
+                
+            } else if (amount == 0) {
+                session.setAttribute("message", "Enter a number greater than 0");
+                
+            } else {
+                if (id == 1) {
+                    CustomerDao.deposit(customerid, amount);
+                    session.setAttribute("message", "Succeessfully deposited amount " + amount + "to customer id : " + customerid);
+                } else if (id == 2) {
+                    boolean withdraw = CustomerDao.withdraw(customerid, amount);
+                    if (withdraw == true) {
+                        session.setAttribute("message", "Succeessfully withdrawn amount " + amount + "to customer id : " + customerid);
+
+                    } else {
+
+                        session.setAttribute("message", "not enough money in the account. ");
+
+                    }
+
+                } else {
+                    session.setAttribute("message", "something went wrong..");
+                }
+
             }
             
-            
-            
+            response.sendRedirect("adminuser.jsp");
+
         }
     }
 

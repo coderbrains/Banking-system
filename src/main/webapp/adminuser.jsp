@@ -194,12 +194,12 @@
                         <form action = "Withdraw?id=1" method="post">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Customer Id</label>
-                                <input type="number" class="form-control" name="customerid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter customer id here">
+                                <input type="number" required="true" class="form-control" name="customerid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter customer id here">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Amount</label>
-                                <input type="number" name="amount" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the amount">
+                                <input required="true" type="number" name="amount" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the amount">
 
                             </div>
                             <div class="container text-center">
@@ -237,12 +237,12 @@
                         <form action = "Withdraw?id=2" method="post">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Customer Id</label>
-                                <input type="number" class="form-control" name="customerid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter customer id here">
+                                <input type="number" required="true" class="form-control" name="customerid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter customer id here">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Amount</label>
-                                <input type="number" name="amount" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the amount">
+                                <input required="true" type="number" name="amount" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the amount">
 
                             </div>
                             <div class="container text-center">
