@@ -5,6 +5,7 @@
  */
 package com.bankingsystem.servlets;
 
+import com.bankingsystem.dao.CustomerDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -36,7 +37,13 @@ public class Withdraw extends HttpServlet {
             int customerid = Integer.parseInt(request.getParameter("customerid"));
             int amount = Integer.parseInt(request.getParameter("amount"));
             
+            CustomerDao.deposit();
             
+            if(id == 1){
+                
+            }else{
+                CustomerDao.withdraw();
+            }
             
             
             
