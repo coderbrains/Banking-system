@@ -66,11 +66,11 @@
 
                 <div class="col-md-4">
 
-                    <div class="card">
+                    <div class="card" data-toggle="modal" data-target="#deposit">
                         <div class="card-body text-center">
 
                             <img src="img/depo.png" style="border-radius: 50%; max-height: 150px;max-width: 150px;"/>
-                            <a href="deposit.jsp" target="_blank"><h1>Deposit</h1></a>
+                            <h1>Deposit</h1>
                         </div>
                     </div>
 
@@ -115,11 +115,11 @@
 
                 <div class="col-md-4">
 
-                    <div class="card">
+                    <div class="card" data-toggle="modal" data-target="#withdraw" >
                         <div class="card-body text-center">
 
                             <img src="img/with.png" style="border-radius: 50%; max-height: 140px;max-width: 140px;"/>
-                            <a href="Witdraw.jsp" target="_blank"><h1>Withdraw</h1></a>
+                            <h1>Withdraw</h1>
                         </div>
                     </div>
 
@@ -175,6 +175,91 @@
         </div>
 
         <!--block account modal ends here-->
+
+
+        <!--deposit form starts here-->
+
+        <!-- Modal -->
+        <div class="modal fade" id="deposit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Deposit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action = "Withdraw?id=1" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Customer Id</label>
+                                <input type="number" class="form-control" name="customerid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter customer id here">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Amount</label>
+                                <input type="number" name="amount" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the amount">
+
+                            </div>
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary">Deposit</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- form ends here-->
+
+
+        <!--withdraw form starts here-->
+
+        <!-- Modal -->
+        <div class="modal fade" id="withdraw" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">withdraw</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action = "Withdraw?id=2" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Customer Id</label>
+                                <input type="number" class="form-control" name="customerid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter customer id here">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Amount</label>
+                                <input type="number" name="amount" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the amount">
+
+                            </div>
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary">Deposit</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </body>
 </html>

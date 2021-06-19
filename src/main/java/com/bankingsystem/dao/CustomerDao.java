@@ -88,5 +88,21 @@ public class CustomerDao {
         
         return list;
     }
+    
+    public static Customer getCustomerbyID(int id){
+        Customer customer = null;
+        
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+        
+        Query q = session.createQuery("from Customer where id =: i");
+        q.setParameter("i", id);
+        customer = (Customer)q.uniqueResult();
+        
+        
+        t.commit();
+        session.close();
+        return customer;
+    }
 
 }

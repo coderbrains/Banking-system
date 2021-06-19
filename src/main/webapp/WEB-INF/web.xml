@@ -20,6 +20,10 @@
         <servlet-name>BlockServlet</servlet-name>
         <servlet-class>com.bankingsystem.servlets.BlockServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Withdraw</servlet-name>
+        <servlet-class>com.bankingsystem.servlets.Withdraw</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Createaccount</servlet-name>
         <url-pattern>/Createaccount</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>BlockServlet</servlet-name>
         <url-pattern>/BlockServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Withdraw</servlet-name>
+        <url-pattern>/Withdraw</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
