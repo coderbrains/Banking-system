@@ -32,17 +32,49 @@
     <body>
         <%@include file="common_components/common_nav_bar.jsp" %>
 
-        <div class="container">
+        <div class="container-fluid">
 
-            <div class="row mt-5">
+            <h3 class="text-center mb-3"> Consumer Information</h3>
 
-                <div class="col-md-4">
+            <div class="row">
 
-                    <div class="card text-center">
+                <div class="col-md-8">
+
+                    <div class=" text-center">
 
                         <div class="card-body">
 
-                            <h1>Send by Adhar_no</h1>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" align="center" colspan="2">Consumer Details</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <td><%=  customer.getName()%></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Email</th>
+                                        <td><%=  customer.getEmail()%></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Password  </th>
+                                        <td><%=  customer.getPassword()%></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Account Balance   </th>
+                                        <td><%=  customer.getAmount()%></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>                                
 
                         </div>
 
@@ -50,29 +82,16 @@
 
                 </div>
 
-                <div class="col-md-4">
 
-                    <div class="card text-center">
-
-                        <div class="card-body">
-
-                            <h1>Send By Consumer Id</h1>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
 
                 <div class="col-md-4">
 
 
-                    <div class="card text-center">
+                    <div class=" text-center">
 
                         <div class="card-body">
 
-                            <h1>Send By PAN</h1>
+                            <img src="Customer_pics/<%=  customer.getPic_name()%>" class="img-fluid" style="max-height: 200px; max-width: 200px;"/>
 
                         </div>
 
@@ -83,9 +102,39 @@
 
             </div>
 
+            <b><hr></b>
 
+            <section class="text-center"><b>Send money using</b></section>
+
+            <div class="container mt-2">
+            <div class="row text-center">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>Adhar</h1>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        
+                    </div>
+                </div>
+                
+            </div>
         </div>
 
+
+        </div>
 
     </body>
 </html>
