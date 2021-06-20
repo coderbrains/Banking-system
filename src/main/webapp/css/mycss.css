@@ -39,4 +39,21 @@ and open the template in the editor.
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.adminn .card{
+    background: #e2e2e2;
+    cursor: pointer;
+    border-radius: 10%;
+    transform: scale(1.03);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.adminn .card:hover{
+    background: #E1BEE7;
+    cursor: pointer;
+    border-radius: 10%;
+    transform: scale(1.03);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+
 

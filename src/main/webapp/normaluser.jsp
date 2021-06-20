@@ -29,7 +29,7 @@
         <title>Hello, <%=   customer.getName()%> | Customer page | Kotax</title>
         <%@include file="common_components/commonjs_css.jsp" %>
     </head>
-    <body>
+    <body style="background: #F9FBE7">
         <%@include file="common_components/common_nav_bar.jsp" %>
 
         <div class="container-fluid">
@@ -106,35 +106,158 @@
 
             <section class="text-center"><b>Send money using</b></section>
 
-            <div class="container mt-2">
-            <div class="row text-center">
+            <div class="container mt-3">
+                <div class="row text-center adminn">
 
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1>Adhar</h1>
+                    <div class="col-md-3">
+                        <div class="card" data-toggle="modal" data-target="#Adhar">
+                            <div class="card-body">
+                                <img src="img/adhar.png" style="max-height: 70px; max-width: 70px;"/>
+                                <h1>Adhar</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card">
-                        
+
+                    <div class="col-md-3">
+                        <div class="card"  data-toggle="modal" data-target="#Mobile">
+                            <div class="card-body">
+                                <img src="img/mobile.jpg" style="max-height: 50px; max-width: 50px;"/>
+                                <h1>Mobile</h1>
+                            </div>
+                        </div>
+
                     </div>
-                    
+
+                    <div class="col-md-3">
+                        <div class="card" data-toggle="modal" data-target="#Email">
+                            <div class="card-body">
+                                <img src="img/email.jpg" style="max-height: 50px; max-width: 50px;"/>
+
+                                <h1>Email</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" data-toggle="modal" data-target="#Pan">
+                            <div class="card-body">
+                                <img src="img/pan.jpg" style="max-height: 50px; max-width: 50px;"/>
+                                <h1>Pan No</h1>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-                
-                <div class="col-md-4">
-                    <div class="card">
-                        
+            </div>
+
+
+        </div>
+
+
+
+        <!--adhar number send money starts here-->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="Adhar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send money using Adhar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
-                
+            </div>
+        </div>
+
+        <!--adhar number send money ends here-->
+
+
+        <!--send money using mobile starts here-->
+
+        <div class="modal fade" id="Mobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send money using mobile number</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
             </div>
         </div>
 
 
+        <!--send money using mobile ends here-->
+
+
+        <!--send money using email starts here-->
+
+        <div class="modal fade" id="Email" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send money using Email Id</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!--send money using email ends here-->
+
+
+        <!--send money using Pan starts here-->
+
+        <div class="modal fade" id="Pan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send money using Pan number</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--send money using pan ends here-->
+
 
     </body>
 </html>
