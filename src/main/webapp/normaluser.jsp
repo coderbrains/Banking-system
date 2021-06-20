@@ -92,7 +92,9 @@
                         <div class="card-body">
 
                             <img src="Customer_pics/<%=  customer.getPic_name()%>" class="img-fluid" style="max-height: 200px; max-width: 200px;"/>
-
+                            <br>
+                            <a class="btn btn-primary text-white mt-4" href="seeusertransaction.jsp"  target="_blank" >See All Transactions</a>
+                            
                         </div>
 
 
