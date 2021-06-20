@@ -24,6 +24,10 @@
         <servlet-name>Withdraw</servlet-name>
         <servlet-class>com.bankingsystem.servlets.Withdraw</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SendMoney</servlet-name>
+        <servlet-class>com.bankingsystem.servlets.SendMoney</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Createaccount</servlet-name>
         <url-pattern>/Createaccount</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>Withdraw</servlet-name>
         <url-pattern>/Withdraw</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMoney</servlet-name>
+        <url-pattern>/SendMoney</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

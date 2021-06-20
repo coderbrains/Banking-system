@@ -5,9 +5,11 @@
  */
 package com.bankingsystem.dao;
 
+import com.bankingsystem.entities.Customer;
 import org.hibernate.Transaction;
 import com.bankingsystem.helper.FactoryProvider;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -35,4 +37,28 @@ public class TransactionDao {
         
     }
 
+    
+    public static boolean sendAdhar(String adhar, int amount){
+        
+        boolean result = false;
+        
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+        
+        Customer customer = CustomerDao.getCustomerByAdhar(adhar);
+        
+        
+        if(customer != null){
+            int currentamount = customer.getAmount();
+            currentamount += amount;
+            customer.setAmount(currentamount);
+            session.update(customer);
+            result = true;
+            
+        }
+        t.commit();
+        session.close();
+        return result;
+    }
+    
 }

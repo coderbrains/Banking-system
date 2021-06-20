@@ -136,12 +136,41 @@ public class CustomerDao {
             camount -= amount;
             c.setAmount(camount);
             session.update(c);
-            result =  true;
+            result = true;
         }
 
         t.commit();
         session.close();//73 7000 7000
         return result;
+    }
+
+    public static Customer getCustomerByAdhar(String adhar) {
+
+        Customer customer = null;
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Query q = session.createQuery("from Customer where aadhar_number =: i");
+        q.setParameter("i", adhar);
+        customer = (Customer) q.uniqueResult();
+        t.commit();
+        session.close();
+        return customer;
+
+    }
+
+    public static void updatebalance(Customer customer, int amount) {
+
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+        
+        int amountt = customer.getAmount();
+        amountt -= amount;
+        customer.setAmount(amountt);
+        session.update(customer);
+        
+        t.commit();
+        session.close();
     }
 
 }

@@ -31,7 +31,7 @@
     </head>
     <body style="background: #F9FBE7">
         <%@include file="common_components/common_nav_bar.jsp" %>
-
+        <%@include file="message.jsp" %>
         <div class="container-fluid">
 
             <h3 class="text-center mb-3"> Consumer Information</h3>
@@ -170,11 +170,23 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <form action="SendMoney?id=1" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Enter Adhar number</label>
+                                <input type="number" name="adhar" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="true" placeholder="Enter Adhar number">
+                               </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Enter Amount</label>
+                                <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="true" placeholder="Enter Amount ">
+                               </div>
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+
                     </div>
                 </div>
             </div>
