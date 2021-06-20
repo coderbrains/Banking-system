@@ -101,8 +101,8 @@ public class TransactionDao {
         session.close();
         return result;
     }
-    
-     public static boolean sendPan(String pan, int amount) {
+
+    public static boolean sendPan(String pan, int amount) {
 
         boolean result = false;
 
@@ -123,8 +123,23 @@ public class TransactionDao {
         session.close();
         return result;
     }
-    
-    
-    
+
+    public static List<com.bankingsystem.entities.Transaction> getAllTransactionBycustomer(Customer c) {
+
+        List list = null;
+
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Query q = session.createQuery("from Transaction where customer =: c");
+        q.setParameter("c", c);
+        list = q.list();
+
+        t.commit();
+        session.close();
+
+        return list;
+
+    }
 
 }

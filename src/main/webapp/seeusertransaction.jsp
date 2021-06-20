@@ -4,6 +4,10 @@
     Author     : Awanish kumar singh
 --%>
 
+<%@page import="com.bankingsystem.dao.CustomerDao"%>
+<%@page import="java.util.List"%>
+<%@page import="com.bankingsystem.dao.TransactionDao"%>
+<%@page import="com.bankingsystem.entities.Transaction"%>
 <%@page import="com.bankingsystem.entities.Customer"%>
 <%
 
@@ -23,9 +27,66 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>See all transactions</title>
+        <%@include file="common_components/commonjs_css.jsp" %>
     </head>
     <body>
-        <h1>Hello World!</h1>
+
+        <%@include file="common_components/common_nav_bar.jsp" %>
+        <%@include file="message.jsp" %>
+
+        <div class="container card  mt-3" style="padding: 10px;background: #e2e2e2;
+             cursor: pointer;
+             border-radius: 10%;
+             transform: scale(1.03);
+             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
+
+            <div class="text-center">
+                <h1>My Transactions</h1>
+            </div>
+
+
+            <%                List<Transaction> list = TransactionDao.getAllTransactionBycustomer(customer);
+
+
+            %>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Transaction Id</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Receiver Id</th>
+                        <th scope="col">Receiver Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <%                    for (Transaction t : list) {
+
+                    %>
+                    
+                    <tr>
+                        
+                        <td><%= t.getId() %></td>
+                        <td><%=  t.getAmount()  %></td>
+                        <td><%=  t.getDate() %></td>
+                        <td><%= t.getReceiverID() %></td>
+                        <td><%=   CustomerDao.getCustomerbyID(t.getReceiverID()).getName() %></td>
+                        
+                    </tr>
+                    
+                    <%
+                        }
+                    %>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
     </body>
 </html>
