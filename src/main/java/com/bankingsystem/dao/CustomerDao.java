@@ -159,16 +159,31 @@ public class CustomerDao {
 
     }
 
+    public static Customer getCustomerByMobile(String mobile) {
+
+        Customer customer = null;
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Query q = session.createQuery("from Customer where mobile =: i");
+        q.setParameter("i", mobile);
+        customer = (Customer) q.uniqueResult();
+        t.commit();
+        session.close();
+        return customer;
+
+    }
+
     public static void updatebalance(Customer customer, int amount) {
 
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
-        
+
         int amountt = customer.getAmount();
         amountt -= amount;
         customer.setAmount(amountt);
         session.update(customer);
-        
+
         t.commit();
         session.close();
     }

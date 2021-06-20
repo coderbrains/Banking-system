@@ -17,48 +17,67 @@ import org.hibernate.query.Query;
  *
  * @author Awanish kumar singh
  */
-
 public class TransactionDao {
-    
-    public static List<com.bankingsystem.entities.Transaction> getAllTransaction(){
-        
+
+    public static List<com.bankingsystem.entities.Transaction> getAllTransaction() {
+
         List<com.bankingsystem.entities.Transaction> list = null;
-        
+
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
-        
+
         Query q = session.createQuery("from Transaction");
         list = q.list();
-        
+
         t.commit();
         session.close();
-        
+
         return list;
-        
+
     }
 
-    
-    public static boolean sendAdhar(String adhar, int amount){
-        
+    public static boolean sendAdhar(String adhar, int amount) {
+
         boolean result = false;
-        
+
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
-        
+
         Customer customer = CustomerDao.getCustomerByAdhar(adhar);
-        
-        
-        if(customer != null){
+
+        if (customer != null) {
             int currentamount = customer.getAmount();
             currentamount += amount;
             customer.setAmount(currentamount);
             session.update(customer);
             result = true;
-            
+
         }
         t.commit();
         session.close();
         return result;
     }
-    
+
+    public static boolean sendMobile(String mobile, int amount) {
+
+        boolean result = false;
+
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Customer customer = CustomerDao.getCustomerByMobile(mobile);
+
+        if (customer != null) {
+            int currentamount = customer.getAmount();
+            currentamount += amount;
+            customer.setAmount(currentamount);
+            session.update(customer);
+            result = true;
+
+        }
+        t.commit();
+        session.close();
+        return result;
+    }
+
 }

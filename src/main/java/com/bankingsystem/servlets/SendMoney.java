@@ -42,16 +42,13 @@ public class SendMoney extends HttpServlet {
                     int senderamount = customer.getAmount();
                     boolean b = TransactionDao.sendAdhar(adhar, amount);
 
-                    
 //                    session.setAttribute("message", senderamount + " " + b);
 //                    response.sendRedirect("normaluser.jsp");
-                    
                     System.out.println(b);
                     if (b == false) {
-                       session.setAttribute("message", "User not found in the db");
-                       response.sendRedirect("normaluser.jsp");
-            
-                        
+                        session.setAttribute("message", "User not found in the db");
+                        response.sendRedirect("normaluser.jsp");
+
                     } else {
                         CustomerDao.updatebalance(customer, amount);
                         session.setAttribute("message", "successfully sent");
@@ -59,6 +56,36 @@ public class SendMoney extends HttpServlet {
 
                     }
                 }
+            } else if (id == 2) {
+
+                String mobile = request.getParameter("mobile");
+                int amount = Integer.parseInt(request.getParameter("amount"));
+                if (mobile.length() != 10) {
+                    session.setAttribute("message", "Mobile number is of 10 digit only. Please enter valid mobile number.");
+                    response.sendRedirect("normaluser.jsp");
+                } else if (amount <= 0) {
+                    session.setAttribute("message", "Please Enter a valid amount greater than 0");
+                    response.sendRedirect("normaluser.jsp");
+                } else if (customer.getAmount() < amount) {
+                    session.setAttribute("message", "not enough balance in the account.");
+                    response.sendRedirect("normaluser.jsp");
+                }else{
+                    
+                    
+                    boolean b = TransactionDao.sendMobile(mobile, amount);
+                    
+                    if (b == false) {
+                        session.setAttribute("message", "User not found in the db");
+                        response.sendRedirect("normaluser.jsp");
+
+                    } else {
+                        CustomerDao.updatebalance(customer, amount);
+                        session.setAttribute("message", "successfully sent");
+                        response.sendRedirect("normaluser.jsp");
+
+                    }
+                }
+
             }
 
         }
