@@ -202,5 +202,22 @@ public class CustomerDao {
         return customer;
 
     }
+    
+    public static Customer getCustomerByPan(String pan) {
+
+        Customer customer = null;
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Query q = session.createQuery("from Customer where pan_number =: i");
+        q.setParameter("i", pan);
+        customer = (Customer) q.uniqueResult();
+        t.commit();
+        session.close();
+        return customer;
+
+    }
+    
+    
 
 }

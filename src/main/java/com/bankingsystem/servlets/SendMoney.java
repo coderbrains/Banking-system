@@ -95,8 +95,8 @@ public class SendMoney extends HttpServlet {
                 } else if (customer.getAmount() < amount) {
                     session.setAttribute("message", "not enough balance in the account.");
                     response.sendRedirect("normaluser.jsp");
-                }else{
-                    
+                } else {
+
                     boolean b = TransactionDao.sendEmail(email, amount);
 
                     if (b == false) {
@@ -109,7 +109,34 @@ public class SendMoney extends HttpServlet {
                         response.sendRedirect("normaluser.jsp");
 
                     }
-                    
+
+                }
+
+            } else if (id == 4) {
+
+                String pan = request.getParameter("pan");
+                int amount = Integer.parseInt(request.getParameter("amount"));
+                if (amount <= 0) {
+                    session.setAttribute("message", "Please Enter a valid amount greater than 0");
+                    response.sendRedirect("normaluser.jsp");
+                } else if (customer.getAmount() < amount) {
+                    session.setAttribute("message", "not enough balance in the account.");
+                    response.sendRedirect("normaluser.jsp");
+                } else {
+
+                    boolean b = TransactionDao.sendPan(pan, amount);
+
+                    if (b == false) {
+                        session.setAttribute("message", "User not found in the db");
+                        response.sendRedirect("normaluser.jsp");
+
+                    } else {
+                        CustomerDao.updatebalance(customer, amount);
+                        session.setAttribute("message", "successfully sent");
+                        response.sendRedirect("normaluser.jsp");
+
+                    }
+
                 }
 
             }

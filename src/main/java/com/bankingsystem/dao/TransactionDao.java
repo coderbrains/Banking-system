@@ -101,5 +101,30 @@ public class TransactionDao {
         session.close();
         return result;
     }
+    
+     public static boolean sendPan(String pan, int amount) {
+
+        boolean result = false;
+
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Customer customer = CustomerDao.getCustomerByPan(pan);
+
+        if (customer != null) {
+            int currentamount = customer.getAmount();
+            currentamount += amount;
+            customer.setAmount(currentamount);
+            session.update(customer);
+            result = true;
+
+        }
+        t.commit();
+        session.close();
+        return result;
+    }
+    
+    
+    
 
 }
