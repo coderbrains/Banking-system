@@ -80,4 +80,26 @@ public class TransactionDao {
         return result;
     }
 
+    public static boolean sendEmail(String email, int amount) {
+
+        boolean result = false;
+
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        Customer customer = CustomerDao.getCustomerByEmail(email);
+
+        if (customer != null) {
+            int currentamount = customer.getAmount();
+            currentamount += amount;
+            customer.setAmount(currentamount);
+            session.update(customer);
+            result = true;
+
+        }
+        t.commit();
+        session.close();
+        return result;
+    }
+
 }

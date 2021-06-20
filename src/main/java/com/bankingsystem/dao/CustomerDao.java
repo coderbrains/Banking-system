@@ -119,6 +119,20 @@ public class CustomerDao {
 
     }
 
+    public static void updatebalance(Customer customer, int amount) {
+
+        Session session = FactoryProvider.getFactory().openSession();
+        Transaction t = session.beginTransaction();
+
+        int amountt = customer.getAmount();
+        amountt -= amount;
+        customer.setAmount(amountt);
+        session.update(customer);
+
+        t.commit();
+        session.close();
+    }
+
     public static boolean withdraw(int customerid, int amount) {
 
         boolean result = false;
@@ -174,18 +188,19 @@ public class CustomerDao {
 
     }
 
-    public static void updatebalance(Customer customer, int amount) {
+    public static Customer getCustomerByEmail(String email) {
 
+        Customer customer = null;
         Session session = FactoryProvider.getFactory().openSession();
         Transaction t = session.beginTransaction();
 
-        int amountt = customer.getAmount();
-        amountt -= amount;
-        customer.setAmount(amountt);
-        session.update(customer);
-
+        Query q = session.createQuery("from Customer where email =: i");
+        q.setParameter("i", email);
+        customer = (Customer) q.uniqueResult();
         t.commit();
         session.close();
+        return customer;
+
     }
 
 }

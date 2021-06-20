@@ -245,11 +245,22 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <form action="SendMoney?id=3" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Enter Email</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="true" placeholder="Enter Email Id">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Enter Amount</label>
+                                <input type="number" name="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="true" placeholder="Enter Amount ">
+                            </div>
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
