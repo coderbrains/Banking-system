@@ -32,13 +32,6 @@
     <body>
         <%@include file="common_components/common_nav_bar.jsp" %>
 
-
-
-        <%                    List<Transaction> list = TransactionDao.getAllTransaction();
-            if (list.size() != 0) {
-
-                for (Transaction t : list) {
-        %>
         <table class="table">
             <thead>
                 <tr>
@@ -52,6 +45,13 @@
 
                 </tr>
             </thead>
+
+
+            <%                    List<Transaction> list = TransactionDao.getAllTransaction();
+                if (list.size() != 0) {
+
+                    for (Transaction t : list) {
+            %>
             <tbody>
 
                 <tr>
@@ -59,15 +59,18 @@
                     <td><%= t.getAmount()%></td>
                     <td><%= t.getDate()%></td>
                     <td><%= t.getReceiverID()%></td>
-                    <td><%=   CustomerDao.getCustomerbyID(t.getReceiverID()).getName() %></td>
-                    <td><%=   t.getCustomer().getUserId() %></td>
-                    <td><%= CustomerDao.getCustomerbyID(t.getCustomer().getUserId()).getName()  %></td>
+                    <td><%=   CustomerDao.getCustomerbyID(t.getReceiverID()).getName()%></td>
+                    <td><%=   t.getCustomer().getUserId()%></td>
+                    <td><%= CustomerDao.getCustomerbyID(t.getCustomer().getUserId()).getName()%></td>
                 </tr>
             </tbody>
+            <%
+                }
+            %>
         </table>
 
         <%
-                }
+                
             } else {
 
                 out.println("<h1>No Transactions found.</h1>");
